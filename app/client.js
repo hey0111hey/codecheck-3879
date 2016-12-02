@@ -1,13 +1,13 @@
 'use strict';
 
-var ws = new WebSocket('ws://localhost:3000');
+var ws = new WebSocket('ws://fast-sierra-67105.herokuapp.com');
 
 $(function () {
   $('form').submit(function(){
     var $this = $(this);
-    // ws.onopen = function() {
-    //   console.log('sent message: %s', $('#m').val());
-    // };
+     ws.onopen = function() {
+       console.log('sent message: %s', $('#m').val());
+     };
     ws.send($('#m').val());
     $('#m').val('');
     return false;
